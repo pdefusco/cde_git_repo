@@ -43,7 +43,6 @@
 
 from __future__ import print_function
 import os
-import sys
 from pyspark.sql import SparkSession
 from pyspark.sql.types import Row, StructField, StructType, StringType, IntegerType
 
@@ -51,15 +50,6 @@ spark = SparkSession\
     .builder\
     .appName("PythonSQL")\
     .getOrCreate()
-
-print("JOB ARGUMENTS")
-print(sys.args)
-print(sys.args[1])
-
-# A list of Rows. Infer schema from the first row, create a DataFrame and print the schema
-rows = [Row(name="John", age=19), Row(name="Smith", age=23), Row(name="Sarah", age=18)]
-some_df = spark.createDataFrame(rows)
-some_df.printSchema()
 
 # A list of tuples
 tuples = [("John", 19), ("Smith", 23), ("Sarah", 18)]
