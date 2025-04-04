@@ -38,7 +38,7 @@
 #***************************************************************************/
 
 from pyspark.sql import SparkSession
-from function_repo.app_util import util_function
+from app_util import util_function
 
 def main():
     spark = SparkSession.builder \
