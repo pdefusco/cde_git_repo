@@ -43,8 +43,6 @@ from app_util import util_function
 def main():
     spark = SparkSession.builder \
                 .appName("PySpark App with Dependency") \
-                .config("spark.executor.memory", "2g") \
-                .config("spark.driver.memory", "2g") \
                 .getOrCreate()
 
     data = [(1,2), (2,3), (3,4), (4,5), (5,6)]
